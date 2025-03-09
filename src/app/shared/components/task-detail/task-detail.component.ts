@@ -32,7 +32,7 @@ export class TaskDetailComponent {
 
   protected readonly statusClassMap: Record<string, string> = {
     Completed: 'status-completed',
-    'In Progress': 'status-in-progress',
+    InProgress: 'status-in-progress',
     Pending: 'status-pending',
   };
 
