@@ -1,0 +1,69 @@
+@if(showPopup()) {
+  <div class="modal-backdrop" (click)="showPopup.set(false)">
+    <div class="modal-content" (click)="$event.stopPropagation()" role="dialog" aria-modal="true" [attr.aria-labelledby]="modalTitleId">
+      
+      <button (click)="showPopup.set(false)" class="modal-close-btn" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <h2 class="modal-title" [id]="modalTitleId">
+        {{ modelTitleMap[currentMode()] }}
+      </h2>
+
+      @if(currentMode() !== 'view') {
+        <form (ngSubmit)="onSubmit()" class="form" #taskForm="ngForm">
+          <div class="form-group">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" name="title" [(ngModel)]="editedTask().title" required class="form-input" [attr.disabled]="currentMode() === 'view' || null" />
+          </div>
+
+          <div class="form-group">
+            <label for="status" class="form-label">Status</label>
+            <select id="status" name="status" [(ngModel)]="editedTask().status" required class="form-input" [attr.disabled]="currentMode() === 'view' || null">
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+
+          <div class="form-footer">
+            <button type="button" class="btn-secondary" (click)="showPopup.set(false)">Cancel</button>
+            <button type="submit" class="btn-primary" [disabled]="taskForm.invalid">Save</button>
+          </div>
+        </form>
+      }
+
+      @if(currentMode() === 'view') {
+        <div class="view-mode">
+          <h3 class="task-title">{{ task()?.title }}</h3>
+          <p class="task-status">
+            Status:
+            <span class="status-badge" [class]="statusClassMap[task()?.status ?? 'Pending']">
+              {{ task()?.status }}
+            </span>
+          </p>
+
+          <div class="comments-section">
+            <h3 class="comments-title">Comments</h3>
+            @if(comments()?.length) {
+              <ul class="comments-list">
+                @for(comment of comments(); track comment.id) {
+                  <li class="comment-item">
+                    <p class="comment-text">{{ comment.text }}</p>
+                    <time class="comment-time" [attr.datetime]="comment.createdAt | date : 'yyyy-MM-dd'">
+                      {{ comment.createdAt | date : 'medium' }}
+                    </time>
+                  </li>
+                }
+              </ul>
+            } @else {
+              <p class="no-comments">No comments available</p>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}

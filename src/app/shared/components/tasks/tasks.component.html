@@ -1,0 +1,60 @@
+<section class="task-list-container">
+    <header class="task-list-header">
+      <h1 class="task-list-title">Task List</h1>
+      <button (click)="onCreateTask()" class="icon-button" aria-label="Add new task">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+        </svg>
+      </button>
+    </header>
+  
+    <div aria-label="Task controls" class="task-controls">
+      <div class="task-controls-group">
+        <div class="sort-buttons">
+          <button (click)="sortType.set('asc')" class="btn-secondary" [class.active]="sortType() === 'asc'" aria-pressed="sortType() === 'asc'">
+            Oldest First
+          </button>
+          <button (click)="sortType.set('desc')" class="btn-secondary" [class.active]="sortType() === 'desc'" aria-pressed="sortType() === 'desc'">
+            Newest First
+          </button>
+        </div>
+        <select id="status-filter" name="statusFilter" [formControl]="statusFilter" class="btn-secondary">
+          <option [ngValue]="null">All Statuses</option>
+          <option value="completed">Completed</option>
+          <option value="in-progress">In Progress</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+    </div>
+  
+    <section aria-live="polite" class="task-list-content">
+      @if (tasksListResource.isLoading()) {
+        <div class="task-loading"><p>Loading tasks...</p></div>
+      }
+  
+      @if (tasksListResource.error()) {
+        <div class="task-error" role="alert"><p>Error loading tasks. Please try again later.</p></div>
+      }
+  
+      @if (tasksListResource.value(); as tasks) {
+        <div class="task-grid">
+          @for (task of tasks; track task.id) {
+            <app-task-card [task]="task" (viewDetails)="onViewTaskDetails($event)" (updateTask)="onUpdateTask($event)"/>
+          }
+        </div>
+      }
+  
+      @if (tasksListResource.value() && tasksListResource.value().length === 0 && !tasksListResource.isLoading()) {
+        <div class="task-empty"><p>No tasks found</p></div>
+      }
+    </section>
+  
+    @if (tasksListResource.value() && tasksListResource.value().length) {
+      <footer class="task-pagination">
+        <button class="btn-primary" aria-label="Load next page">Load More</button>
+      </footer>
+    }
+  
+    <app-task-detail [task]="selectedTask()" [(showPopup)]="isOpen" [currentMode]="currentMode" [comments]="commentsResource.value() ?? []" (taskAction)="onTaskAction($event)"/>
+  </section>
+  

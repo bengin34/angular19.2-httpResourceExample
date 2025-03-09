@@ -1,0 +1,58 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Implement Login Page",
+      "description": "Create a responsive login page with Angular Material.",
+      "status": "in-progress",
+      "assignee": "John Doe",
+      "priority": "high",
+      "createdAt": "2024-03-08T12:00:00Z",
+      "updatedAt": "2024-03-08T14:30:00Z",
+      "dueDate": "2024-03-10T00:00:00Z",
+      "comments": [1, 2]
+    },
+    {
+      "id": 2,
+      "title": "Fix Backend API",
+      "description": "Resolve the CORS issue in the backend service.",
+      "status": "pending",
+      "assignee": "Jane Smith",
+      "priority": "medium",
+      "createdAt": "2024-03-07T10:00:00Z",
+      "updatedAt": "2024-03-07T15:45:00Z",
+      "dueDate": "2024-03-12T00:00:00Z",
+      "comments": [3]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "taskId": 1,
+      "author": "Alice",
+      "message": "Can we use Tailwind instead of Material?",
+      "timestamp": "2024-03-08T13:00:00Z"
+    },
+    {
+      "id": 2,
+      "taskId": 1,
+      "author": "Bob",
+      "message": "I have updated the Figma file.",
+      "timestamp": "2024-03-08T14:00:00Z"
+    },
+    {
+      "id": 3,
+      "taskId": 2,
+      "author": "Charlie",
+      "message": "CORS issue is resolved, but we need to test on production.",
+      "timestamp": "2024-03-07T16:00:00Z"
+    }
+  ],
+  "dashboard": {
+    "totalTasks": 10,
+    "completedTasks": 4,
+    "inProgressTasks": 3,
+    "pendingTasks": 3,
+    "lastUpdated": "2024-03-08T15:00:00Z"
+  }
+}

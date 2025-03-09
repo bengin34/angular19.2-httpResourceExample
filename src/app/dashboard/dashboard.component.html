@@ -1,0 +1,29 @@
+@if(dashboardStats()) {
+    <section class="dashboard-container">
+      <h2 class="dashboard-title">Task Statistics</h2>
+      <div class="dashboard-grid">
+        @for (stat of statsConfig; track stat.key) {
+        <article
+          class="stat-card"
+          [class]="stat.backgroundClass"
+          role="region"
+          [attr.aria-labelledby]="stat.key + '-title'"
+        >
+          <div>
+            <h3 [id]="stat.key + '-title'" class="stat-title" [class]="stat.textClass">
+              {{ stat.title }}
+            </h3>
+            <p class="stat-value" [class]="stat.valueClass">
+              @if (dashboardStats(); as stats) {
+              {{ stats[stat.key]! || 0 }}
+              } @else {
+              <span class="placeholder">--</span>
+              }
+            </p>
+          </div>
+        </article>
+        }
+      </div>
+    </section>
+    }
+    
