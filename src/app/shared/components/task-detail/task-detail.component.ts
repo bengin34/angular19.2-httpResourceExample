@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, input, model, output, signal, SimpleChanges } from '@angular/core';
+import { Component, effect, input, model, output, signal, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Comment, Task, TaskAction, TaskActionType } from '../../models/task.model';
 
@@ -31,9 +31,9 @@ export class TaskDetailComponent {
   }
 
   protected readonly statusClassMap: Record<string, string> = {
-    Completed: 'bg-green-100 text-green-800',
-    'In Progress': 'bg-yellow-100 text-yellow-800',
-    Pending: 'bg-red-100 text-red-800',
+    Completed: 'status-completed',
+    'In Progress': 'status-in-progress',
+    Pending: 'status-pending',
   };
 
   ngOnChanges(changes: SimpleChanges):void {

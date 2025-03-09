@@ -10,7 +10,11 @@
       "createdAt": "2024-03-08T12:00:00Z",
       "updatedAt": "2024-03-08T14:30:00Z",
       "dueDate": "2024-03-10T00:00:00Z",
-      "comments": [1, 2]
+      "comments": [
+        1,
+        2,
+        11
+      ]
     },
     {
       "id": 2,
@@ -22,7 +26,129 @@
       "createdAt": "2024-03-07T10:00:00Z",
       "updatedAt": "2024-03-07T15:45:00Z",
       "dueDate": "2024-03-12T00:00:00Z",
-      "comments": [3]
+      "comments": [
+        3,
+        12
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Design Dashboard UI",
+      "description": "Create an interactive dashboard with charts and widgets.",
+      "status": "completed",
+      "assignee": "Emma Watson",
+      "priority": "high",
+      "createdAt": "2024-03-06T09:30:00Z",
+      "updatedAt": "2024-03-07T11:00:00Z",
+      "dueDate": "2024-03-10T00:00:00Z",
+      "comments": [
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Optimize Database Queries",
+      "description": "Improve query performance by indexing frequently accessed columns.",
+      "status": "in-progress",
+      "assignee": "Michael Brown",
+      "priority": "high",
+      "createdAt": "2024-03-05T14:00:00Z",
+      "updatedAt": "2024-03-07T09:00:00Z",
+      "dueDate": "2024-03-15T00:00:00Z",
+      "comments": []
+    },
+    {
+      "id": 5,
+      "title": "Upgrade Node.js Version",
+      "description": "Update the project to use Node.js 18 and test compatibility.",
+      "status": "completed",
+      "assignee": "Sophia Lee",
+      "priority": "low",
+      "createdAt": "2024-03-04T11:00:00Z",
+      "updatedAt": "2024-03-06T13:30:00Z",
+      "dueDate": "2024-03-09T00:00:00Z",
+      "comments": [
+        5
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Write Unit Tests for Auth Module",
+      "description": "Increase test coverage for authentication services.",
+      "status": "pending",
+      "assignee": "Emily Davis",
+      "priority": "medium",
+      "createdAt": "2024-03-03T16:00:00Z",
+      "updatedAt": "2024-03-05T14:30:00Z",
+      "dueDate": "2024-03-12T00:00:00Z",
+      "comments": [
+        6
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Implement CI/CD Pipeline",
+      "description": "Set up GitHub Actions for automated deployment.",
+      "status": "in-progress",
+      "assignee": "Daniel Wilson",
+      "priority": "high",
+      "createdAt": "2024-03-02T08:30:00Z",
+      "updatedAt": "2024-03-05T12:45:00Z",
+      "dueDate": "2024-03-14T00:00:00Z",
+      "comments": [
+        7
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Refactor User Profile Module",
+      "description": "Improve code structure and reusability in the profile module.",
+      "status": "completed",
+      "assignee": "Sarah Johnson",
+      "priority": "medium",
+      "createdAt": "2024-03-01T13:45:00Z",
+      "updatedAt": "2024-03-03T10:20:00Z",
+      "dueDate": "2024-03-08T00:00:00Z",
+      "comments": []
+    },
+    {
+      "id": 9,
+      "title": "Enhance Security Policies",
+      "description": "Implement CSP and other security headers.",
+      "status": "pending",
+      "assignee": "Kevin White",
+      "priority": "high",
+      "createdAt": "2024-02-28T15:20:00Z",
+      "updatedAt": "2024-03-02T09:00:00Z",
+      "dueDate": "2024-03-15T00:00:00Z",
+      "comments": [
+        8
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Redesign Landing Page",
+      "description": "Modernize the homepage with a fresh UI/UX approach.",
+      "status": "in-progress",
+      "assignee": "Oliver Thomas",
+      "priority": "high",
+      "createdAt": "2024-02-25T09:00:00Z",
+      "updatedAt": "2024-02-28T14:30:00Z",
+      "dueDate": "2024-03-18T00:00:00Z",
+      "comments": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "cfa5",
+      "title": "test213123",
+      "status": "Pending"
+    },
+    {
+      "id": "ecbd",
+      "title": "212testas",
+      "status": "In Progress"
     }
   ],
   "comments": [
@@ -46,12 +172,26 @@
       "author": "Charlie",
       "message": "CORS issue is resolved, but we need to test on production.",
       "timestamp": "2024-03-07T16:00:00Z"
+    },
+    {
+      "id": 4,
+      "taskId": 3,
+      "author": "David",
+      "message": "Added a dark mode toggle option.",
+      "timestamp": "2024-03-06T15:20:00Z"
+    },
+    {
+      "id": 5,
+      "taskId": 5,
+      "author": "Lucas",
+      "message": "Upgrade went smoothly, but we need to update dependencies.",
+      "timestamp": "2024-03-05T17:45:00Z"
     }
   ],
   "dashboard": {
-    "totalTasks": 10,
-    "completedTasks": 4,
-    "inProgressTasks": 3,
+    "totalTasks": 12,
+    "completedTasks": 3,
+    "inProgressTasks": 4,
     "pendingTasks": 3,
     "lastUpdated": "2024-03-08T15:00:00Z"
   }

@@ -22,6 +22,7 @@ export class TaskCardComponent {
   */
 onViewDetails(task: Task): void {
   this.viewDetails.emit(task)
+  console.log(task)
 }
 
 onUpdate(task: Task){

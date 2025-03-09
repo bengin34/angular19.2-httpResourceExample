@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+
  
   }
   
@@ -37,7 +37,7 @@
     height: 24px;
   }
   
-  section .task-controls {
+.task-controls {
     margin-bottom: 24px;
   }
   
@@ -98,9 +98,11 @@
   
   .task-grid {
     width: 100%;
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    
   }
   
   .task-pagination {

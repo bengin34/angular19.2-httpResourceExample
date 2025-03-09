@@ -55,6 +55,12 @@
       </footer>
     }
   
-    <app-task-detail [task]="selectedTask()" [(showPopup)]="isOpen" [currentMode]="currentMode" [comments]="commentsResource.value() ?? []" (taskAction)="onTaskAction($event)"/>
+    <app-task-detail
+      [task]="selectedTask()" 
+      [(showPopup)]="isOpen" 
+      [currentMode]="currentMode" 
+      [comments]="commentsResource.value() ?? []" 
+      (taskAction)="onTaskAction($event)"
+      />
   </section>
   

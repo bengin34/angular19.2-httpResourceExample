@@ -23,10 +23,10 @@ export type TaskAction = {
 };
 export type Comment = {
   id: number;
+  author: string;
   taskId: number;
-  userId: number;
-  text: string;
-  createdAt: string;
+  message: string;
+  timestamp: string;
 };
 
 export type PaginationTaskResponse = {
